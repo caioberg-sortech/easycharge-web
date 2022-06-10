@@ -1,4 +1,4 @@
- <main>
+<main>
     <section class="container-fluid pt-4 pb-4">
         <div class="jumbotron jumbotron-fluid pt-4 pb-0 mt-4">
                 <h1 class="display-4 text-center">Lista Clientes</h1>
@@ -8,3 +8,7 @@
     </section>
 </main>
 
+<ec-load-button 
+    (click)="load()"
+    [hasMore]="hasMore">
+</ec-load-button>
