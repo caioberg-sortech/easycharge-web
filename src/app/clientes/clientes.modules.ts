@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
+import { ClienteListModule } from './cliente-list/cliente-list.modules';
 
-import { ListaClienteComponent } from './listaCliente/listaCliente.component';
+
 
 
 @NgModule({
-  declarations: [
-    ListaClienteComponent
-  ],
-  exports: [ListaClienteComponent]
+  imports:[
+    ClienteListModule
+  ]
 })
 export class ClientesModule { }
