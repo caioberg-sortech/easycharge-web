@@ -22,7 +22,7 @@
             <td>{{cliente.local}}</td>
             <td>{{cliente.status}}</td>
             <td>
-                <button class="btn btn-secondary w-100" type="button">
+                <button class="btn btn-secondary w-100" type="button" (click)="atualizaStatus(cliente.id)">
                     <span *ngIf="cliente.status == 'SUSPENSO'">Ativar</span>
                     <span *ngIf="cliente.status == 'ATIVO'">Suspender</span>
                 </button>
@@ -31,7 +31,7 @@
                 <button class="btn btn-warning" type="button" (click)="removeCliente(cliente.id)">Remover</button>
             </td>
             <td>
-                <button class="btn btn-danger" role="button">Alterar Cliente</button>
+                <button class="btn btn-danger" role="button" >Alterar Cliente</button>
             </td>
         </tr>
         </tbody>

@@ -11,7 +11,7 @@ export class ClientesComponent {
 
   @Input() clientes: Cliente[] = []
 
-  @Output() atualiza = new EventEmitter()
+  @Output() atualizaLista = new EventEmitter()
 
   constructor(
     private clienteService: ClienteService){
@@ -20,7 +20,14 @@ export class ClientesComponent {
   
   removeCliente(id:number){
     this.clienteService.removeCliente(id)
-    .subscribe(() => this.atualiza.emit(true))
+    .subscribe(() => this.atualizaLista.emit(true))
     
+  }
+
+  atualizaStatus(id:number){
+    console.log('teste');
+    
+    this.clienteService.atulizaStatus(id)
+    .subscribe(() => this.atualizaLista.emit(true))
   }
 }
