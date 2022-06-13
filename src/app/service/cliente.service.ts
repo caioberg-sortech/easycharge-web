@@ -18,4 +18,8 @@ export class ClienteService{
         return this.http
         .get<PaginaClientes>(API,{params})
     }
+
+    removeCliente(clienteId: number){
+        return this.http.delete(API + '/' + clienteId)
+    }
 }

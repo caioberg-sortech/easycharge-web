@@ -3,12 +3,13 @@
         <div class="jumbotron jumbotron-fluid pt-4 pb-0 mt-4">
                 <h1 class="display-4 text-center">Lista Clientes</h1>
         </div>
-        <ec-clientes [clientes]="clientes">
+        <ec-clientes [clientes]="clientes" (atualiza)="atualizaLista()">
         </ec-clientes>
     </section>
 </main>
 
 <ec-load-button 
     (click)="load()"
-    [hasMore]="hasMore">
+    [hasMore]="hasMore"
+    >
 </ec-load-button>

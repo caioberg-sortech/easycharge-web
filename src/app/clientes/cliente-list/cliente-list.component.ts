@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaginaClientes } from 'src/app/model/pagina-clientes';
 
@@ -10,13 +10,11 @@ import { ClienteService } from '../../service/cliente.service';
   templateUrl: './cliente-list.component.html',
   styleUrls: ['./cliente-list.component.css']
 })
-export class ClienteListComponent implements OnInit {
+export class ClienteListComponent implements OnInit, OnChanges {
 
   clientes: Cliente[] = []
   currentPage: number = 0
   hasMore = true
-
-
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -28,15 +26,27 @@ export class ClienteListComponent implements OnInit {
   
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['clientes']){
+      
+    }
+  }
+
   load() {
     this.clienteService
       .listCliente(++this.currentPage)
-      .subscribe(clientes => this.clientes = clientes.content)
-        
-        /*photos => {
-        this.filter = '';
-        this.photos = this.photos.concat(photos);
-        if(!photos.length) this.hasMore = false;*/
+      .subscribe((clientes):void => { 
+        this.clientes = this.clientes.concat(clientes.content)
+        if(!clientes.content.length){
+          this.hasMore = false;
+        }
+      })     
   }
 
+  atualizaLista(){
+    console.log('teste');
+    
+    this.clienteService.listCliente(0)
+    .subscribe(clientes => this.clientes = clientes.content)
+  }
 }

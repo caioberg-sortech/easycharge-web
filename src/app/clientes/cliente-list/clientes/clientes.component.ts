@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ClienteService } from 'src/app/service/cliente.service';
 import { Cliente } from '../../../model/cliente';
 
 @Component({
@@ -6,13 +7,20 @@ import { Cliente } from '../../../model/cliente';
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.css']
 })
-export class ClientesComponent implements OnInit {
+export class ClientesComponent {
 
   @Input() clientes: Cliente[] = []
 
-  constructor() { }
+  @Output() atualiza = new EventEmitter()
 
-  ngOnInit(): void {
+  constructor(
+    private clienteService: ClienteService){
+    
+   }
+  
+  removeCliente(id:number){
+    this.clienteService.removeCliente(id)
+    .subscribe(() => this.atualiza.emit(true))
+    
   }
-
 }
