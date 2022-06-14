@@ -47,6 +47,9 @@ export class ClienteListComponent implements OnInit, OnChanges {
     console.log('teste');
     
     this.clienteService.listCliente(0)
-    .subscribe(clientes => this.clientes = clientes.content)
+    .subscribe(clientes => {
+      this.clientes = clientes.content
+      this.currentPage = 0
+    this.hasMore = true})
   }
 }
