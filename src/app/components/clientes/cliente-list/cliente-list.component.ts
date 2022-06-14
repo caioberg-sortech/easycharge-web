@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PaginaClientes } from 'src/app/model/pagina-clientes';
+import { Cliente } from 'src/app/model/cliente';
 
-import { Cliente } from '../../model/cliente';
-import { ClienteService } from '../../service/cliente.service';
+import { ClienteService } from 'src/app/service/cliente.service';
+
 
 @Component({
   selector: 'ec-cliente-list',
@@ -23,7 +23,6 @@ export class ClienteListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.clientes = this.activatedRoute.snapshot.data['clientes']['content']
-  
   }
 
   ngOnChanges(changes: SimpleChanges): void {

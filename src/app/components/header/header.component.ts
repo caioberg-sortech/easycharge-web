@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ec-header',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  step: String | undefined
+  
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
+   }
 
   ngOnInit(): void {
+    this.step = this.activatedRoute.routeConfig?.path
   }
 
 }

@@ -1,7 +1,10 @@
 import { NgModule } from "@angular/core";
 import {RouterModule, Routes} from '@angular/router'
-import { ClienteListComponent } from "./clientes/cliente-list/cliente-list.component";
-import { ClienteListResolver } from "./clientes/cliente-list/cliente-list.resolver";
+
+import { ClienteListComponent } from "./components/clientes/cliente-list/cliente-list.component";
+import { ClienteListResolver } from "./components/clientes/cliente-list/cliente-list.resolver";
+
+
 
 const routes: Routes = [
     {
@@ -10,9 +13,7 @@ const routes: Routes = [
         resolve: {
             clientes: ClienteListResolver
         }
-
     }
-
 ]
 
 

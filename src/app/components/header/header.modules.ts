@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { AppRoutingModule } from "../app.routing.module";
+import { AppRoutingModule } from "../../app.routing.module";
 import { HeaderComponent } from "./header.component";
 
 @NgModule({

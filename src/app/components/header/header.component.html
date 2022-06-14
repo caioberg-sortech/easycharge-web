@@ -4,8 +4,8 @@
             <a class="navbar-brand ms-lg-4">EasyCharge</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active" aria-current="page" href="#">Lista</a></li>
-                    <li><a class="nav-link" th:href="@{/clienteFormulario}" >Cadastrar</a></li>
+                    <li><a class="nav-link" [class.active]="step=='step1'" (click)="step='step1'" aria-current="page" href="clientes/lista">Cliente</a></li>
+                    <li><a class="nav-link" [class.active]="step=='step2'" (click)="step='step2'" href="divida/lista" >Divida</a></li>
                 </ul>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ClienteService } from 'src/app/service/cliente.service';
-import { Cliente } from '../../../model/cliente';
+import { Cliente } from '../../../../model/cliente';
 
 @Component({
   selector: 'ec-clientes',
