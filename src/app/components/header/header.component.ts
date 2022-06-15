@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  step: String | undefined
   
   constructor(
     private activatedRoute: ActivatedRoute
@@ -16,7 +15,6 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.step = this.activatedRoute.routeConfig?.path
   }
 
 }
