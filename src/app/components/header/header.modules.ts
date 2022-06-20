@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "../../app.routing.module";
+
 import { HeaderComponent } from "./header.component";
 
 @NgModule({
@@ -7,7 +9,9 @@ import { HeaderComponent } from "./header.component";
         HeaderComponent
     ],
     imports:[
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
     ],
     exports:[
         HeaderComponent

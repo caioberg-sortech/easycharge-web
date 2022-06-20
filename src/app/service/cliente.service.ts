@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http"
 import { Injectable } from "@angular/core";
 import { catchError, retry, throwError } from "rxjs";
 import { Cliente } from "../model/cliente";
+import { ClienteForm } from "../model/clienteForm";
 
 import { PaginaClientes } from "../model/pagina-clientes";
 
@@ -35,6 +36,14 @@ export class ClienteService{
       .pipe(
           retry(1),
           catchError(this.handleError))
+    }
+
+    salvaCliente(cliente: ClienteForm) {
+        return this.http.post<ClienteForm>(`${this.API}`, cliente)
+        .pipe(
+            retry(2),
+            catchError(this.handleError)
+        );
     }
 
     handleError(error: HttpErrorResponse) {

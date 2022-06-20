@@ -6,10 +6,10 @@
         <ec-clientes [clientes]="clientes" (atualizaLista)="atualizaLista()">
         </ec-clientes>
     </section>
+
+    <ec-load-button 
+    (click)="load()"
+    [hasMore]="hasMore">
+    </ec-load-button>
 </main>
 
-<ec-load-button 
-    (click)="load()"
-    [hasMore]="hasMore"
-    >
-</ec-load-button>
